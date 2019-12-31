@@ -2,17 +2,17 @@
 
 import sys
 
-from PyQt5.QtWidgets import QApplication, QLabel, QWidget
+from PyQt5.QtWidgets import QApplication, QPushButton, QWidget, QHBoxLayout
 
 app = QApplication(sys.argv)
 
 window = QWidget()
-window.setWindowTitle('PyQt5 App')
-window.setGeometry(100, 100, 280, 80)
-window.move(60, 15)
-helloMsg = QLabel('<h1>Hello World!</h1>', parent=window)
-helloMsg.move(60, 15)
-
+window.setWindowTitle('QHBoxLayout')
+layout = QHBoxLayout()
+layout.addWidget(QPushButton('Left'))
+layout.addWidget(QPushButton('Center'))
+layout.addWidget(QPushButton('Right'))
+window.setLayout(layout)
 window.show()
 
 sys.exit(app.exec_())
